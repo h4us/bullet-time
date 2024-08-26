@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Button</title>
+  <script src="/socket.io/socket.io.js"></script>
+</head>
+<body>
+  <button id="capture" type="button">Capture</button>
+  <script>
+    const socket = io();
+    const button = document.querySelector("#capture");
+
+    button.addEventListener("click", () => {
+      socket.emit("capture");
+    });
+  </script>
+</body>
+</html>
